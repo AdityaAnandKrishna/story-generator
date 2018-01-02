@@ -218,14 +218,7 @@ export default class Choropleth extends Component {
     let budgetAttr = this.props.budgetAttr;
     let MappedFigures = new Array();
     MappedFigures = GeoJSONData.features.map(function(state, index){      
-      let temp = record.find(function(x){
-      if(x.grpby_name==state.properties.NAME_1)
-      {   
-          return x;
-      }
-      else{
-        return false;
-          }
+      let temp = record.find(function(x){ return x.grpby_name==state.properties.NAME_1     
       });
       for ( let variable in state.properties ){
         if (variable != "HASC_1" && variable != "NAME_1")
